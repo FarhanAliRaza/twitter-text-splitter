@@ -65,7 +65,10 @@ export class Tweet {
     createTweets() {
         //splitting
         this.getTotalCount()
-        if (this.totalCount < 280) return;
+        if (this.totalCount == 0) {
+            this.clear()
+            return
+        };
         this.tweets = []
         //if we split by text it will cut words so we take that into account 
         let remainingText = this.text + " ";

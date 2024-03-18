@@ -1,9 +1,21 @@
 <script>
-	let { t, rebuild } = $props();
+	import { onDestroy } from 'svelte';
 
+	let { t, rebuild } = $props();
+	let text = $state('Copy');
+	let timeout = null;
 	function copyText() {
 		navigator.clipboard.writeText(t.text);
+		text = '👍 Copied';
+		timeout = setTimeout(() => {
+			text = 'Copy';
+		}, 10000);
 	}
+	onDestroy(() => {
+		if (timeout) {
+			clearTimeout(timeout);
+		}
+	});
 </script>
 
 <div class="card">
@@ -29,7 +41,7 @@
 				>
 			{/if}
 
-			<button onclick={copyText} class="btn variant-ghost-primary"> Copy </button>
+			<button onclick={copyText} class="btn variant-ghost-primary"> {text} </button>
 		</div>
 	</div>
 </div>

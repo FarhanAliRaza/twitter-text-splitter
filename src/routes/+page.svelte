@@ -11,12 +11,12 @@
 	}
 </script>
 
-<header id="hero" class=" bg">
+<main class=" bg">
 	<div class="pt-24 max-w-7xl mx-auto text-center">
 		<h1 class="h1 !text-5xl md:!text-6xl">Twitter Breaker</h1>
 		<p class="!text-xl mt-4">This is twitter thread splitter that can split text into tweets</p>
 	</div>
-	<main class="max-w-4xl mx-auto mt-4">
+	<div class="max-w-4xl mx-auto mt-4">
 		<div class=" max-w-4xl mx-auto card p-4">
 			<label class="label">
 				<span class="text-2xl">Enter your long tweet here</span>
@@ -58,8 +58,15 @@
 				<TweetCard {t} {rebuild} />
 			{/each}
 		</div>
-	</main>
-</header>
+	</div>
+</main>
+<footer class="text-center absolute top-0 right-0">
+	Made With 💖 by <a
+		href="https://twitter.com/FarhanAliRaza4"
+		target="_blank"
+		rel="noopener noreferrer">@Farhan</a
+	>
+</footer>
 
 <style>
 	.bg {
